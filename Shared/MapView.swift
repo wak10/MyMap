@@ -53,15 +53,14 @@ struct MapView: UIViewRepresentable {
                 uiView.region = MKCoordinateRegion(
                     center: targetCoordinate,
                     latitudinalMeters: 500.0,
-                    longitudinalMeters: 500.0
-                    )
+                    longitudinalMeters: 500.0)
             }
         })
     }
 }
 
 struct MapView_Previews: PreviewProvider {
-    static var previews: some  = MKMapView {
+    static var previews: some = MKMapView {
 
     }
 }
