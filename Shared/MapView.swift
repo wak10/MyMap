@@ -17,7 +17,8 @@ struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView{
         //MKMapViewのインスタンス生成
         MKMapView()
-    }
+    }//makeUIViewここまで
+    
     //表示したViewが更新されるたびに実行
     func updateUIView(_ uiView: MKMapView, context: Context) {
         
@@ -28,9 +29,9 @@ struct MapView: UIViewRepresentable {
         let geocoder = CLGeocoder()
         
         //入力された文字から位置情報を取得
-        geocoder.geocodeAddressString(
-        searchkey ,
-        completionHandler: { (placemarks,error) in
+        geocoder.geocodeAddressString(searchkey , completionHandler:{
+            (placemarks,error) in
+            
             //リクエストの結果が存在し、1件目の情報から位置情報を取り出す
             if let unwarpPlacemarks = placemarks ,
                let firstPlacemark = unwarpPlacemarks.first ,
@@ -54,13 +55,13 @@ struct MapView: UIViewRepresentable {
                     center: targetCoordinate,
                     latitudinalMeters: 500.0,
                     longitudinalMeters: 500.0)
-            }
-        })
-    }
-}
+            }//ifここまで
+        })//geocoderここまで
+    }//updateUIViewここまで
+}//MapViewここまで
 
 struct MapView_Previews: PreviewProvider {
-    static var previews: some = MKMapView {
-
+    static var previews: some = View {
+        MapView()
     }
 }
