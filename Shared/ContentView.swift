@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    typealias Body = <#type#>
+    
     //入力中の文字を保持する状態変数
     @State var inputText:String = ""
     //検索キーワードを保持する状態変数

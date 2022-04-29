@@ -61,7 +61,7 @@ struct MapView: UIViewRepresentable {
 }//MapViewここまで
 
 struct MapView_Previews: PreviewProvider {
-    static var previews: some = View {
+    static var previews: some <#type#> = View {
         MapView()
     }
 }
