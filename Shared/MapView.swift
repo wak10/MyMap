@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MapKit
+import GoogleMaps
 
 struct MapView: UIViewRepresentable {
 
